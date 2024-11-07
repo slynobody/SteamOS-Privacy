@@ -13,9 +13,6 @@
 # echo //////
 ## mv ./user.js /home/deck/.var/app/org.mozilla.firefox/.mozilla/firefox/$FOLDER/
 
-# optional: install pi-hole locally: https://github.com/pi-hole/pi-hole/#one-step-automated-install
-## curl -sSL https://install.pi-hole.net | bash
-
 sudo steamos-readonly disable
 sudo rm -R /home/deck/.cache/*
 
@@ -35,7 +32,6 @@ sudo cp ./wifi_backend.conf /etc/NetworkManager/conf.d
 # also see: https://wiki.archlinux.org/title/Systemd-resolved#DNS_over_TLS
 sudo mkdir /etc/systemd/resolved.conf.d 
 sudo cp ./dns_over_tls.conf /etc/systemd/resolved.conf.d
-
 sudo systemctl restart systemd-resolved
 sudo systemctl enable systemd-resolved
 sudo systemctl status systemd-resolved
@@ -47,6 +43,14 @@ sudo systemctl status systemd-resolved
 # basics: local blocklists -- /etc/hosts
 # Add more URLs in the script as needed (see f.e.: https://awesome-privacy.xyz/networking/host-block-lists or https://filterlists.com/ or https://pluralistic.net/2022/04/28/shut-yer-pi-hole/#largest-boycott-in-world-history)
 sudo sh ./hosts_update.sh
+
+# optional: install pi-hole locally: https://github.com/pi-hole/pi-hole/#one-step-automated-install
+## curl -sSL https://install.pi-hole.net | bash
+
+#optional: install opensnitch (personal firewall)
+#sudo pacman -S opensnitch
+#systemctl enable opensnitchd
+#systemctl start opensnitchd
 
 # install packages
 sudo pacman-key --init
@@ -62,7 +66,3 @@ sudo firecfg
 firecfg --list
 #sudo firecfg --clean
 
-#optional: opensnitch (personal firewall)
-#sudo pacman -S opensnitch
-#systemctl enable opensnitchd
-#systemctl start opensnitchd
