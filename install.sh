@@ -6,11 +6,11 @@
 ## https://github.com/ryanrudolfoba/SecureBootForSteamDeck
 
 # optional: Browsing: privacy-by-default for firefox: https://github.com/arkenfox/user.js
-wget https://github.com/arkenfox/user.js/blob/master/user.js -P ~/Downloads
-echo //////
-echo "// privacy-as-default for firefox: place the user.js-file (downloads-folder) in the following subfolder of /home/deck/.var/app/org.mozilla.firefox/.mozilla/firefox/"
-grep 'Path=' ~/.mozilla/firefox/profiles.ini | sed s/^Path=//
-echo //////
+# wget https://github.com/arkenfox/user.js/blob/master/user.js -P ~/Downloads
+# echo //////
+# echo "// privacy-as-default for firefox: place the user.js-file (downloads-folder) in the following subfolder of /home/deck/.var/app/org.mozilla.firefox/.mozilla/firefox/"
+# grep 'Path=' ~/.mozilla/firefox/profiles.ini | sed s/^Path=//
+# echo //////
 ## mv ./user.js /home/deck/.var/app/org.mozilla.firefox/.mozilla/firefox/$FOLDER/
 
 # optional: install pi-hole locally: https://github.com/pi-hole/pi-hole/#one-step-automated-install
@@ -31,7 +31,7 @@ sudo systemctl stop avahi-daemon.socket
 sudo mkdir /etc/NetworkManager/conf.d
 sudo cp ./wifi_backend.conf /etc/NetworkManager/conf.d
 
-# basics: dns-queries, dot
+# basics: dns-queries
 # also see: https://wiki.archlinux.org/title/Systemd-resolved#DNS_over_TLS
 sudo mkdir /etc/systemd/resolved.conf.d 
 sudo cp ./dns_over_tls.conf /etc/systemd/resolved.conf.d
@@ -45,6 +45,7 @@ sudo systemctl status systemd-resolved
 # needed: steam 80, 443, UDP 27015-27050, TCP 27015-27050; epic: 80, 433, 443, 3478, 3479, 5060, 5062, 5222, 6250, 12000-65
 
 # basics: local blocklists -- /etc/hosts
+# Add more URLs in the script as needed (see f.e.: https://awesome-privacy.xyz/networking/host-block-lists or https://filterlists.com/ or https://pluralistic.net/2022/04/28/shut-yer-pi-hole/#largest-boycott-in-world-history)
 sudo sh ./hosts_update.sh
 
 # install packages
