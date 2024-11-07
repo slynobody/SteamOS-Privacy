@@ -7,6 +7,7 @@ URLS=(
     "https://raw.githubusercontent.com/KodoPengin/GameIndustry-hosts-Template/refs/heads/master/Main-Template/hosts"
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
     # Add more URLs as needed
+    # see f.e.: https://awesome-privacy.xyz/networking/host-block-lists or https://filterlists.com/ or https://pluralistic.net/2022/04/28/shut-yer-pi-hole/#largest-boycott-in-world-history
 )
 TEMP_FILE=$(mktemp)
 for URL in "${URLS[@]}"; do
