@@ -1,6 +1,9 @@
 # SteamOS-Privacy
 
-git clone https://github.com/slynobody/SteamOS-Privacy
-cd SteamOS-Privacy
-chmod +s ./*.sh
-./install.sh
+> git clone https://github.com/slynobody/SteamOS-Privacy
+> 
+> cd SteamOS-Privacy
+>
+> chmod +x ./*.sh
+>
+> ./install.sh
