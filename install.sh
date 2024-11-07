@@ -66,3 +66,4 @@ sudo firecfg
 firecfg --list
 #sudo firecfg --clean
 
+sudo steamos-readonly enable
