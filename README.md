@@ -1,4 +1,4 @@
-# SteamOS-Privacy
+# SteamOS-Privacy / Security
 * <b>privacy-as-default</b> for SteamOS (Steam-Deck)
 * various usage-fields: f.e. for using steamdeck as daily main machine.
 * <b> feel free to contribute.</b> (open for PRs)
