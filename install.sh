@@ -58,7 +58,8 @@ sudo pacman-key --populate archlinux
 sudo pacman-key --populate holo
 sudo pacman-key --refresh-keys
 #sudo pacman -Syu
-sudo pacman -Fy
+# takes time (15 min+)
+#sudo pacman -Fy
 sudo pacman -S tcpdump firejail gamemode fakeroot kvantum --overwrite '*'
 
 #firejail
